@@ -1,7 +1,5 @@
 # **Team-Profile-Generator Generator**
 
-![github license](https://img.shields.io/badge/license-BSD-blueviolet.svg)
-
 ## **Table of Contents**
 1. [Project Description](#description)
 2. [Installation](#installation)
