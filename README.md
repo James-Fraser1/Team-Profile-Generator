@@ -9,7 +9,7 @@
 4. [Questions](#questions)
 
 ## **Description**
-An application built with Node.js that receives information from a user and populates it into a README.md file.
+Your challenge is to build a Node.js command-line application that takes in information about employees on a software engineering team and generates an HTML webpage that displays summaries for each person.
 ## User Story
   
 ```
