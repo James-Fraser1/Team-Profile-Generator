@@ -1,0 +1,32 @@
+#nav {
+	background: linear-gradient(-90deg, #fcd45d, #89ccf6, #b0ef8e);
+	background-size: 300%;
+	font-weight: 900;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: animated_text 10s ease-in-out infinite;
+	-moz-animation: animated_text 10s ease-in-out infinite;
+	-webkit-animation: animated_text 10s ease-in-out infinite;
+}
+
+@keyframes animated_text {
+	0% { background-position: 0px 50%; }
+	50% { background-position: 100% 50%; }
+	100% { background-position: 0px 50%; }
+}
+
+.title {
+	text-align: center;
+}
+
+#managerCard {
+	background-color:#b0ef8e;
+}
+
+#engineerCard {
+	background-color:#89ccf6;
+}
+
+#internCard {
+	background-color:#fcd45d;
+}
