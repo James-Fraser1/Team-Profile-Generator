@@ -8,9 +8,14 @@ const Manager = require("./lib/Manager")
 
 const teamArray = [];
 
-const managerQuestions = [
-    inquirer.prompt(
-        {
+function app() {
+
+
+
+const managerQuestions = () => { 
+
+inquirer.prompt(
+        [{
             type: 'input',
             message: "What is your team manager's name?",
             name: 'managerName',
@@ -29,7 +34,7 @@ const managerQuestions = [
             type: 'input',
             message: "What is your team manager's office number?",
             name: 'managerNumber',
-        },
+        }],
     )
         .then((managerQuestions) => {
             const newManager = new Manager(managerQuestions)
@@ -39,15 +44,15 @@ const managerQuestions = [
         })
         .catch((error) => {
             console.log(error)
-        })
-];
+        });
+};
 
 const selectTeam = () => {
     inquirer.prompt([
         {
             type: 'list',
-            message: "What license did you use?",
-            name: 'license',
+            message: "What employee do you want to add?",
+            name: 'team',
             choices: ['Engineer', 'Intern', 'Complete Team'],
         },
     ])
@@ -66,9 +71,9 @@ const selectTeam = () => {
         })
 };
 
-const engineerQuestions = [
+const engineerQuestions = () => {
     inquirer.prompt(
-        {
+        [{
             type: 'input',
             message: "What is your engineer's name?",
             name: 'engineerName',
@@ -87,7 +92,7 @@ const engineerQuestions = [
             type: 'input',
             message: "What is your engineer's office number?",
             name: 'engineerNumber',
-        },
+        }],
     )
         .then((engineerQuestions) => {
             const newEngineer = new Engineer(engineerQuestions)
@@ -97,12 +102,12 @@ const engineerQuestions = [
         })
         .catch((error) => {
             console.log(error)
-        })
-];
+        });
+};
 
-const internQuestions = [
+const internQuestions = () => {
     inquirer.prompt(
-        {
+        [{
             type: 'input',
             message: "What is your Intern's name?",
             name: 'internName',
@@ -122,7 +127,7 @@ const internQuestions = [
             message: "What is your Intern's office number?",
             name: 'internNumber',
         },
-    )
+    ])
         .then((internQuestions) => {
             const newIntern = new Intern(internQuestions)
             teamArray.push(newIntern)
@@ -131,15 +136,17 @@ const internQuestions = [
         })
         .catch((error) => {
             console.log(error)
-        })
-];
+        });
+    };
 
 const generateChoice = () => {
-    fs.writeFileSync('./dist/index.html', teamProfile(teamArray))
+    fs.writeFile('./dist/index.html', teamProfile(teamArray))
 }
 
 managerQuestions();
+};
 
+app();
 // Start Application
 // Ask Questions from the Manager
 // Then go to Menu
