@@ -34,8 +34,11 @@ function app() {
             }],
         )
             .then((managerQuestions) => {
+                console.log(managerQuestions)
                 const newManager = new Manager(managerQuestions)
+                console.log(newManager)
                 teamArray.push(newManager)
+                console.log(teamArray)
                 selectTeam();
             })
             .catch((error) => {
@@ -53,7 +56,8 @@ function app() {
             },
         ])
             .then(userChoice => {
-                switch (userChoice.profile) {
+                console.log(userChoice)
+                switch (userChoice.team) {
                     case 'Engineer':
                         engineerQuestions();
                         break;
@@ -134,6 +138,7 @@ function app() {
     };
 
     const generateChoice = () => {
+        console.log('success!')
         fs.writeFileSync('./dist/index.html', generatedHTML(teamArray), (error) => {
             if (err) { console.log(err) }
         });

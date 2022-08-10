@@ -1,81 +1,85 @@
 const makeHTML = [];
 
 const everything = (team) => {
-    const generateManager = managerQuestions => {
-        return `<div class="column is-3">
+  const generateManager = managerQuestions => {
+    return `<div class="column is-3">
     <div class="card" id="managerCard">
 
         <div class="card-content">
           <div class="media">
             <div class="media-content">
             <p class="title is-4 is-bold">Manager</p>
-              <p class="title is-5">${managerQuestions.getName()}</p>
+              <p class="title is-5">${managerQuestions.name.managerName}</p>
             </div>
           </div>
       
           <div class="content">
-            <p>Email:<a href="#">${managerQuestions.getEmail()}</a></p>
-            <footer><p class="subtitle is-6">${managerQuestions.getId()}</p></footer>
+            <p>Email:<a href="#">${managerQuestions.name.managerID}</a></p>
+            <footer><p class="subtitle is-6">${managerQuestions.name.managerEmail}</p></footer>
         </div>
         </div>
       </div>
 </div>`;
-    }
+  }
 
-    const generateEngineer = engineerQuestions => {
-        return `<div class="column is-3">
+  const generateEngineer = engineerQuestions => {
+    console.log(engineerQuestions)
+    return `<div class="column is-3">
 <div class="card" id="engineerCard">
 
     <div class="card-content">
       <div class="media">
         <div class="media-content">
         <p class="title is-4 is-bold">Engineer</p>
-          <p class="title is-5">${engineerQuestions.getName()}</p>
+          <p class="title is-5">${engineerQuestions.name.engineerName}</p>
         </div>
       </div>
   
       <div class="content">
-        <p>Email:<a href="#">${engineerQuestions.getEmail()}</a></p>
-        <p>Github:<a href="#">${engineerQuestions.getGithub()}</a></p>
-        <footer><p class="subtitle is-6">${engineerQuestions.getId()}</p></footer>
+        <p>Email:<a href="#">${engineerQuestions.name.engineerEmail}</a></p>
+        <footer><p class="subtitle is-6">${engineerQuestions.name.engineerID}</p></footer>
     </div>
     </div>
   </div>
 </div>`;
-    }
+  }
 
-    const generateIntern = internQuestions => {
-        return `<div class="column is-3">
+  const generateIntern = internQuestions => {
+    console.log(internQuestions)
+    return `<div class="column is-3">
 <div class="card" id="internCard">
 
     <div class="card-content">
       <div class="media">
         <div class="media-content">
         <p class="title is-4 is-bold">Intern</p>
-          <p class="title is-5">${internQuestions.getName()}</p>
+          <p class="title is-5">${internQuestions.name.internName}</p>
         </div>
       </div>
   
       <div class="content">
-        <p>Email:<a href="#">${internQuestions.getEmail()}</a></p>
-        <p>Github:<a href="#">${internQuestions.getGithub()}</a></p>
-        <footer><p class="subtitle is-6">${internQuestions.getId()}</p></footer>
+        <p>Email:<a href="#">${internQuestions.name.internEmail}</a></p>
+        <footer><p class="subtitle is-6">${internQuestions.name.internID}</p></footer>
     </div>
     </div>
   </div>
 </div>`;
-    }
+  }
 
-    makeHTML.push(team.filter(employee => employee.getRole() === 'Manager').map(managerQuestions => generateManager(managerQuestions)));
+  makeHTML.push(team.filter(employee => employee.getRole() === 'Manager')
+    .map(managerQuestions => generateManager(managerQuestions)));
 
-    makeHTML.push(team.filter(employee => employee.getRole() === 'Engineer').map(engineerQuestions => generateEngineer(engineerQuestions)));
+  makeHTML.push(team.filter(employee => employee.getRole() === 'Engineer')
+    .map(engineerQuestions => generateEngineer(engineerQuestions)));
 
-    makeHTML.push(team.filter(employee => employee.getRole() === 'Intern').map(internQuestions => generateIntern(internQuestions)));
-    return makeHTML.join('');
+  makeHTML.push(team.filter(employee => employee.getRole() === 'Intern')
+    .map(internQuestions => generateIntern(internQuestions)));
+
+  return makeHTML.join('');
 };
 
 module.exports = (team) => {
-    return `<!DOCTYPE html>
+  return `<!DOCTYPE html>
     <html lang="en">
     
     <head>
