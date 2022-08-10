@@ -142,7 +142,6 @@ function app() {
 };
 
 app();
-
 // Start Application
 // Ask Questions from the Manager
 // Then go to Menu
