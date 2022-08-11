@@ -90,8 +90,8 @@ function app() {
             },
             {
                 type: 'input',
-                message: "What is your engineer's office number?",
-                name: 'engineerNumber',
+                message: "What is your engineer's github?",
+                name: 'engineerGithub',
             }],
         )
             .then((engineerQuestions) => {
@@ -123,8 +123,8 @@ function app() {
             },
             {
                 type: 'input',
-                message: "What is your Intern's office number?",
-                name: 'internNumber',
+                message: "What is your Intern's school?",
+                name: 'internSchool',
             },
             ])
             .then((internQuestions) => {

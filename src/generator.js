@@ -15,6 +15,7 @@ const everything = (team) => {
       
           <div class="content">
             <p>Email:<a href="#">${managerQuestions.name.managerID}</a></p>
+            <p>Email:<a href="#">${managerQuestions.name.managerNumber}</a></p>
             <footer><p class="subtitle is-6">${managerQuestions.name.managerEmail}</p></footer>
         </div>
         </div>
@@ -37,6 +38,7 @@ const everything = (team) => {
   
       <div class="content">
         <p>Email:<a href="#">${engineerQuestions.name.engineerEmail}</a></p>
+        <p>Github:<a href="#">${engineerQuestions.name.engineerGithub}</a></p>
         <footer><p class="subtitle is-6">${engineerQuestions.name.engineerID}</p></footer>
     </div>
     </div>
@@ -59,6 +61,7 @@ const everything = (team) => {
   
       <div class="content">
         <p>Email:<a href="#">${internQuestions.name.internEmail}</a></p>
+        <p>School:<a href="#">${internQuestions.name.internSchool}</a></p>
         <footer><p class="subtitle is-6">${internQuestions.name.internID}</p></footer>
     </div>
     </div>
