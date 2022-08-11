@@ -30,3 +30,8 @@
 #internCard {
 	background-color:#fcd45d;
 }
+
+.columns {
+	text-align: center;
+	flex: auto;
+}
