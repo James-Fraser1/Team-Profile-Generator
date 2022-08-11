@@ -33,5 +33,5 @@
 
 .columns {
 	text-align: center;
-	flex: auto;
+	flex: content;
 }
