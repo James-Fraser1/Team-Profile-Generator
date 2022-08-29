@@ -1,6 +1,6 @@
 const Engineer = require('../lib/Engineer');
 
-const engineers = new Engineer('Tatiana', '42', 'ouroboros@gruyere.tech');
+const engineers = new Engineer('Tatiana', '42', 'ouroboros@gruyere.tech', 'Alatreon-01', 'Engineer');
 
 test('decide if the new person created from engineer is received', () => {
     expect(engineers.name).toBe('Tatiana');
@@ -10,27 +10,27 @@ test('decide if the new person created from engineer is received', () => {
 }
 );
 
-test('show that the new engineers gets their name'), () => {
+test('show that the new engineers gets their name', () => {
     expect(engineers.getName())
-    .toBe('Tatiana');
-};
+        .toBe('Tatiana');
+});
 
-test('show that the new engineers gets their ID'), () => {
+test('show that the new engineers gets their ID', () => {
     expect(engineers.getId())
-    .toBe('42');
-};
+        .toBe('42');
+});
 
-test('show that the new engineers gets their email'), () => {
+test('show that the new engineers gets their email', () => {
     expect(engineers.getEmail())
-    .toBe('ouroboros@gruyere.tech');
-};
+        .toBe('ouroboros@gruyere.tech');
+});
 
-test('show that the new engineers gets their Github'), () => {
+test('show that the new engineers gets their Github', () => {
     expect(engineers.getgitHub())
-    .toBe('Alatreon-01');
-};
+        .toBe('Alatreon-01');
+});
 
-test('show that the new engineers gets added'), () => {
+test('show that the new engineers gets added', () => {
     expect(engineers.getRole())
-    .toBe('Engineer');
-};
+        .toBe('Engineer');
+});
